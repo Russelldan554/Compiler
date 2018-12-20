@@ -57,7 +57,7 @@ Types checkLogical(Types left, Types right)
 		return MISMATCH;
 	}
 		return BOOL_TYPE;
-	return MISMATCH;
+
 }
 
 Types checkRelational(Types left, Types right)

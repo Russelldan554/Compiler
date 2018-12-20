@@ -84,7 +84,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 34 "parser.y" /* yacc.c:1909  */
+#line 35 "parser.y" /* yacc.c:1909  */
 
 	CharPtr iden;
 	Types type;

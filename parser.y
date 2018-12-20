@@ -12,11 +12,13 @@ using namespace std;
 #include "types.h"
 #include "listing.h"
 #include "symbols.h"
+#include "values.h"
 
 int yylex();
 void yyerror(const char* message);
 
 Symbols<Types> symbols;
+Symbols<double> valSymbols;
 
 double* params = NULL;
 int count = 1;
@@ -25,6 +27,11 @@ bool others = false;
 bool caseSet = false;
 Types caseType = MISMATCH;
 
+struct Vals
+{
+Types type;
+double value;
+};
 
 %}
 
@@ -33,7 +40,8 @@ Types caseType = MISMATCH;
 %union
 {
 	CharPtr iden;
-	Types type;
+	Operators oper;
+	Vals vals;
 }
 
 %token <iden> IDENTIFIER
