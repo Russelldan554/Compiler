@@ -84,12 +84,14 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 35 "parser.y" /* yacc.c:1909  */
+#line 36 "parser.y" /* yacc.c:1909  */
 
 	CharPtr iden;
+	Operators oper;
+	Vals vals;
 	Types type;
 
-#line 93 "parser.tab.h" /* yacc.c:1909  */
+#line 95 "parser.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

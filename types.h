@@ -5,8 +5,16 @@
 // prototypes for the type checking functions
 
 typedef char* CharPtr;
-
 enum Types {MISMATCH, INT_TYPE, BOOL_TYPE, REAL_TYPE};
+
+struct Vals
+{
+    Types type;
+    double value;
+};
+
+enum Operators {LESS, GREAT, LESSEQUAL, EQUAL, GREATEQUAL, NOTEQUAL, ADD, MULTIPLY, EXPONENT, SUB, REM, DIV};
+
 
 void checkAssignment(Types lValue, Types rValue, string message);
 Types checkArithmetic(Types left, Types right);
@@ -15,3 +23,6 @@ Types checkRelational(Types left, Types right);
 Types checkIf(Types exp, Types left, Types right);
 Types checkRem(Types left, Types right);
 void typeCheck(Types type);
+int evaluateReduction(Operators operator_, int head, int tail);
+int evaluateRelational(int left, Operators operator_, int right);
+int evaluateArithmetic(int left, Operators operator_, int right);
